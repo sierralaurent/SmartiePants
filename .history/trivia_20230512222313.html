@@ -2,6 +2,45 @@
 <html lang="en">
 
 <head>
+  <script>
+    // Paste your JavaScript code here
+    let timeLeft = document.getElementById("timeLeft");
+    let countdownCircle = document.getElementById('dd');
+    let dots = document.querySelector('.dots');
+    let endTime = new Date();
+    endTime.setMinutes(endTime.getMinutes() + 5); // Set the end time to 5 minutes from the current time
+
+    let x = setInterval(function(){
+        let now = new Date().getTime();
+        let distance = endTime - now;
+
+        // Time calculations for minutes and seconds
+        let minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+        let seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+        // Display the remaining time in the format MM:SS
+        timeLeft.innerHTML = minutes.toString().padStart(2, '0') + ":" +
+                              seconds.toString().padStart(2, '0');
+
+        // Calculate the radius of the circle based on the remaining time
+        let radius = (distance / (endTime - now)) * 70;
+        countdownCircle.setAttribute('r', radius);
+
+        if (distance <= 0) {
+            clearInterval(x);
+            timeLeft.innerHTML = "00:00"; 
+            showAlert();
+            // Display a specific message or perform any actions when the countdown reaches zero
+        } 
+
+        dd.style.strokeDashoffset = 440 - (440 * (distance / (5 * 60 * 1000)));
+
+    }, 1000);
+
+    function showAlert(){
+        alert("Time is over");
+    }
+</script>
   <link rel="stylesheet" href="trivia.css">
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -12,6 +51,7 @@
 </head>
 
 <body>
+ 
   <div id="time">
     <div class="circle" style="--clr:#ff2972">
         <div class="dots"></div>
@@ -21,6 +61,7 @@
         <div id="timeLeft">00:00</div>
     </div>
 </div>
+
   <div class="settingsContainer" style='display: block;' id="settingsContainer">
     <label for="category-dropdown">Select a category:</label>
     <select id="category-dropdown">
@@ -81,8 +122,7 @@
 
 
 
-  <script src="trivia.js"></script>
-  <script src="timer.js"></script>
+  <script src="trivia.js" />
 </body>
 
 </html>
