@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quizlet | Results</title>
+    <link href="/css/result.css" rel="stylesheet" />
+    <link href="components/navbar/navbar.css" rel='stylesheet'>
+    <link href='https://fonts.googleapis.com/css?family=Chakra Petch' rel='stylesheet'>
+    <link href='https://fonts.googleapis.com/css?family=Bruno Ace' rel='stylesheet'>
+</head>
+
+<!-- nav bar -->
+<header>
+    <div>
+        <p class="quizlet">Quizlet</p>
+    </div>
+    <div class="navigation">
+        <button class="hamburger" onclick="show()">
+            <img src="/assets/menu.png" />
+        </button>
+        <nav>
+            <h1 class="menutitle">Menu</h1>
+            <ul>
+                <li><a class="a" href="/">Home</a></li>
+                <li><a class="a" href="#">Quizzes</a></li>
+            </ul>
+        </nav>
+    </div>
+    <script src="/components/navbar/nav.js"></script>
+</header>
+<!-- -->
+
+<body>
+    <h1 class="title">Results</h1>
+
+
+    <div id="score" class="score"></div>
+    <div id="summary" class="summary"></div>
+
+    <div class="container">
+
+        <div class="container1">
+            <h3 class="wrongTitle">Wrong</h3>
+            <div id="wrongAnswersList" class="wrongList"></div><br />
+        </div>
+
+        <div class="container2">
+            <h3 class="correctTitle">Correct</h3>
+            <div id="correctAnswersList" class="correctList"></div>
+        </div>
+    </div>
+
+    <button><a href="index.html">Restart Quiz</a></button>
+
+
+    <script src="quiz.js"></script>
+    <script src="result.js"></script>
+
+</body>
+
+</html>
