@@ -99,8 +99,11 @@ body {
 .footerContent {
     display: flex;
     justify-content: center;
-    align-items: center;
     gap: 8rem;
     font-weight: 400;
     flex-wrap: wrap;
+}
+.footerList {
+    ju
+    align-items: center;
 }

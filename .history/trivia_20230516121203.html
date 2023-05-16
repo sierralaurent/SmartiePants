@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<!--Page to select category and difficulty-->
+<head>
+  <link rel="stylesheet" href="trivia.css">
+  <meta charset="UTF-8">
+
+  <meta name="viewport" content="width=
+    , initial-scale=1.0">
+  <title>SMARTIEPANTS | START TRIVIA</title>
+  <link rel="stylesheet" href="trivia.css" />
+</head>
+
+<body>
+  <div>
+    <label for="category-dropdown">Select a Category:</label>
+    <select id="category-dropdown">
+      <option value="">-- SELECT A CATEGORY --</option>
+    </select>
+
+    <p>Select a Difficulty:</p>
+    <input type="radio" id="easy" name="difficulty" value="easy" checked>
+    <label for="easy">Easy</label><br>
+    <input type="radio" id="medium" name="difficulty" value="medium">
+    <label for="medium">Medium</label><br>
+    <input type="radio" id="hard" name="difficulty" value="hard">
+    <label for="hard">Hard</label>
+
+    <a href="/quiz.html"><button id="start-button">START</button></a>
+  </div>
+
+  <script src="trivia.js"></script>
+  <script src="timer.js"></script>
+</body>
+
+</html>

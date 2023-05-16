@@ -104,3 +104,6 @@ body {
     font-weight: 400;
     flex-wrap: wrap;
 }
+.footerList {
+    align-items: center;
+}

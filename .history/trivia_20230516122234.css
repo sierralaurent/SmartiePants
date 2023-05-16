@@ -1,0 +1,22 @@
+body {
+    background-image: url('./background.svg');
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: 25%;
+}
+.mainContainer {
+    border: 3px solid white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.categoryContainer {
+    border: 1px solid black;
+
+}
+
+.difficultyContainer {
+    border: 1px solid black;
+}

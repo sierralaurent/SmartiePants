@@ -98,9 +98,14 @@ body {
 
 .footerContent {
     display: flex;
-    justify-content: center;
-    align-items: center;
     gap: 8rem;
     font-weight: 400;
     flex-wrap: wrap;
+}
+.footerList {
+    text-decoration: none;
+    transition: 0.2s;
+    cursor: pointer;
+    user-select: none;
+    color: black;
 }
