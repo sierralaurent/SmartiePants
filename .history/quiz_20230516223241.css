@@ -58,7 +58,7 @@ body {
     border-radius: 20px;
     color: white;
     width: 360px;
-    height: 40px;
+    height: 50px;
     font-weight: bold; 
 }
 
@@ -114,6 +114,5 @@ margin-right: 20px;
 .score{
     display: flex;
     justify-content: center;
-    font-weight: bold;
-    font-size: 20px;
+    font
 }

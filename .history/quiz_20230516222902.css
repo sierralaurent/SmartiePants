@@ -34,12 +34,6 @@ body {
         font-size: 30px;
     }
 
-    .timer{
-        display: flex;
-        justify-content: center;
-        margin: 25px;
-    }
-
     .container{
         display: flex;
         justify-content: center;
@@ -58,7 +52,7 @@ body {
     border-radius: 20px;
     color: white;
     width: 360px;
-    height: 40px;
+    height: 50px;
     font-weight: bold; 
 }
 
@@ -99,7 +93,7 @@ margin-right: 20px;
    bottom: 20px;
 }
 
-.question-progress{
+.score{
     display: flex;
     justify-content: center;
     background-color:  rgba(90, 169, 230, 1);
@@ -109,11 +103,4 @@ margin-right: 20px;
     font-weight: bold;
     color: white;
    
-}
-
-.score{
-    display: flex;
-    justify-content: center;
-    font-weight: bold;
-    font-size: 20px;
 }
