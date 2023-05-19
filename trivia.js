@@ -42,10 +42,10 @@ function startQuiz() {
 
   if (quizContainer.style.display === 'none') {
     settingsContainer.style.display = 'none'
-    quizContainer.style.display = 'block';
+    quizContainer.style.display = 'flex';
   } else {
     quizContainer.style.display === 'none';
-    settingsContainer.style.display = 'block'
+    settingsContainer.style.display = 'flex'
   }
 
   const question = document.getElementById('question');
@@ -69,7 +69,7 @@ function startQuiz() {
     .then((loadedQuestions) => {
       questions = loadedQuestions.results.map((loadedQuestion) => {
         const formattedQuestion = {
-          question: loadedQuestion.question,
+          question: decodeHTML(loadedQuestion.question),
         };
 
         const answerChoices = [...loadedQuestion.incorrect_answers];
@@ -81,7 +81,7 @@ function startQuiz() {
         );
 
         answerChoices.forEach((choice, index) => {
-          formattedQuestion['choice' + (index + 1)] = choice;
+          formattedQuestion['choice' + (index + 1)] = decodeHTML(choice);;
         });
 
         return formattedQuestion;
@@ -107,7 +107,7 @@ function startQuiz() {
     if (availableQuesions.length === 0 || questionCounter >= MAX_QUESTIONS) {
       localStorage.setItem('mostRecentScore', score);
       //go to the end page
-      return window.location.assign('/end.html');
+      return window.location.assign('/results.html');
     }
     questionCounter++;
     progressText.innerText = `Question ${questionCounter}/${MAX_QUESTIONS}`;
@@ -169,4 +169,8 @@ function getSelectedRadioValue(radios) {
   return null;
 }
 
-
+function decodeHTML(html) {
+  const txt = document.createElement("textarea");
+  txt.innerHTML = html;
+  return txt.value;
+}
