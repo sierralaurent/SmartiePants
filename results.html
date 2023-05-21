@@ -1,37 +1,47 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>Congrats!</title>
-    <link rel="stylesheet" href="results.css" />
-  </head>
-  <body>
-    <div class="container">
-      <div id="end" class="flex-center flex-column">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <title>Congrats!</title>
+  <link rel="stylesheet" href="results.css" />
+</head>
+
+<body>
+  <!--NavBar-->
+  <div class="navBarContainer">
+    <a class="navBarLinks" href="/index.html">
+      <h3>Home</h3>
+    </a>
+    <a class="navBarLinks" href="/trivia.html">
+      <h3>Trivia</h3>
+    </a>
+    <a class="navBarLinks" href="/about.html">
+      <h3>About</h3>
+    </a>
+  </div>
+
+  <div class="container">
+    <div id="end" class="flex-center flex-column">
+      
+      <div class="scorediv">
+        <h1>Your Final Score:</h1>
         <h1 id="finalScore"></h1>
-        <form>
-          <input
-            type="text"
-            name="username"
-            id="username"
-            placeholder="username"
-          />
-          <button
-            type="submit"
-            class="btn"
-            id="saveScoreBtn"
-            onclick="saveHighScore(event)"
-            disabled
-          >
-            Save
-          </button>
-        </form>
-        <a class="btn" href="/trivia.html">Play Again</a>
-        <a class="btn" href="/">Go Home</a>
       </div>
+
+      <form>
+        <input type="text" name="username" id="username" placeholder="username" />
+        <button type="submit" class="btn" id="saveScoreBtn" onclick="saveHighScore(event)" disabled>
+          Save
+        </button>
+      </form>
+      <a class="btn" href="/trivia.html">Play Again</a>
+      <a class="btn" href="/">Go Home</a>
     </div>
-    <script src="results.js"></script>
-  </body>
+  </div>
+  <script src="results.js"></script>
+</body>
+
 </html>
