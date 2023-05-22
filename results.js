@@ -28,7 +28,7 @@ saveHighScore = (e) => {
     window.location.assign('/');
 };
 
-const userResponses = JSON.parse(localStorage.getItem('userResponses')); // Retrieve user responses from local storage
+const userResponses = JSON.parse(localStorage.getItem('userResponses')); 
 const resultsContainer = document.getElementById('resultsContainer');
 
 if (userResponses && userResponses.length > 0) {
