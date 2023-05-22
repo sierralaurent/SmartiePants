@@ -24,24 +24,19 @@
   </div>
 
   <div class="container">
-    <div id="end" class="flex-center flex-column">
-      
+    <div id="end" class="flex-center">
       <div class="scorediv">
         <h1>Your Final Score:</h1>
         <h1 id="finalScore"></h1>
       </div>
-
-      <form>
-        <input type="text" name="username" id="username" placeholder="username" />
-        <button type="submit" class="btn" id="saveScoreBtn" onclick="saveHighScore(event)" disabled>
-          Save
-        </button>
-      </form>
+    
       <a class="btn" href="/trivia.html">Play Again</a>
-      <a class="btn" href="/">Go Home</a>
-      <div class="resultsContainer" id="resultsContainer"></div>
+      <a class="btn2" href="/">Go Home</a>
+      
+      <div class="resultsContainer" id="resultsContainer"><p class="results-title">Questions and Answers:</p></div>
     </div>
   </div>
+
   <script src="results.js"></script>
 </body>
 
