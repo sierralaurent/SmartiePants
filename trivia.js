@@ -20,19 +20,19 @@ fetch("https://opentdb.com/api_category.php")
   // catches any errors
   .catch(error => console.error(error));
 
-
-
 const startButton = document.getElementById("start-button");
 const difficultyRadios = document.getElementsByName("difficulty");
-let url = ''
+let url = '';
+let userResponses = []; // Variable to store user's question and answer responses
 
 // event listener for the start button. runs startQuiz function
 startButton.addEventListener("click", startQuiz);
 
+userResponses = []
 //sets the category to the value of what user picked in dropdown
 function startQuiz() {
   const category = categoryDropdown.value;
-  // sets diffiulty based on what user picked in radio buttons
+  // sets difficulty based on what user picked in radio buttons
   const difficulty = getSelectedRadioValue(difficultyRadios);
   //the url of what questions the api will give based on category and difficulty user picked
   url = `https://opentdb.com/api.php?amount=10&type=multiple${category ? `&category=${category}` : ""}${difficulty ? `&difficulty=${difficulty}` : ""}`;
@@ -106,6 +106,7 @@ function startQuiz() {
   getNewQuestion = () => {
     if (availableQuesions.length === 0 || questionCounter >= MAX_QUESTIONS) {
       localStorage.setItem('mostRecentScore', score);
+      localStorage.setItem('userResponses', JSON.stringify(userResponses)); // Store user responses in local storage
       //go to the end page
       return window.location.assign('/results.html');
     }
@@ -144,6 +145,14 @@ function startQuiz() {
 
       selectedChoice.parentElement.classList.add(classToApply);
 
+      // Store user's question and answer response
+      userResponses.push({
+        question: currentQuestion.question,
+        answer: currentQuestion['choice' + selectedAnswer],
+        correct_answer: currentQuestion['choice' + currentQuestion.answer]
+      });
+      
+
       setTimeout(() => {
         selectedChoice.parentElement.classList.remove(classToApply);
         getNewQuestion();
@@ -157,7 +166,7 @@ function startQuiz() {
   };
 
 
-  console.log(url)
+  console.log(url);
 }
 
 function getSelectedRadioValue(radios) {
