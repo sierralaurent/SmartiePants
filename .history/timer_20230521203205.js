@@ -6,7 +6,7 @@ let endTime = new Date();
 let x;
 
 function startTimer() {
-  
+  // Hide the settings container and show the quiz container
   document.getElementById("settingsContainer").style.display = "none";
   document.getElementById("quizContainer").style.display = "block";
 
