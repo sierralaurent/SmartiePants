@@ -8,7 +8,7 @@ body {
 body {
     margin: 0;
     padding: 0;
-    background-image: url('./background.svg');
+    background-image: url('./bg.svg');
     background-size: cover;
     display: flex;
     flex-direction: column;
