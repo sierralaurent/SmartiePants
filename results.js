@@ -10,7 +10,7 @@ const MAX_HIGH_SCORES = 5;
 finalScore.innerText = mostRecentScore;
 
 
-const userResponses = JSON.parse(localStorage.getItem('userResponses')); // Retrieve user responses from local storage
+const userResponses = JSON.parse(localStorage.getItem('userResponses')); 
 const resultsContainer = document.getElementById('resultsContainer');
 
 if (userResponses && userResponses.length > 0) {
