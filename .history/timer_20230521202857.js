@@ -6,15 +6,15 @@ let endTime = new Date();
 let x;
 
 function startTimer() {
-  
+  // Hide the settings container and show the quiz container
   document.getElementById("settingsContainer").style.display = "none";
   document.getElementById("quizContainer").style.display = "block";
 
-  
+  // Set the end time for 5 minutes from now
   endTime = new Date();
   endTime.setMinutes(endTime.getMinutes() + 5);
 
- 
+  // Start the timer
   x = setInterval(function() {
     let now = new Date().getTime();
     let distance = endTime - now;
@@ -44,7 +44,7 @@ function showAlert() {
   window.location.href = "results.html";
 }
 
-
+// Add event listener to the start button
 document.getElementById("start-button").addEventListener("click", startTimer);
 
 
