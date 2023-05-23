@@ -108,7 +108,7 @@ function startQuiz() {
       localStorage.setItem('mostRecentScore', score);
       localStorage.setItem('userResponses', JSON.stringify(userResponses)); 
 
-      return window.location.assign('/results.html');
+      return window.location.assign('/SmartiePants/results.html');
     }
     questionCounter++;
     progressText.innerText = `Question ${questionCounter}/${MAX_QUESTIONS}`;

@@ -41,7 +41,7 @@ function startTimer() {
 
 function showAlert() {
   alert("Time is over");
-  window.location.href = "results.html";
+  window.location.href = "/SmartiePants/trivia.html";
 }
 
 
